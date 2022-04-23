@@ -14,18 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController extends BaseController {
     
     @GetMapping("/test")
-    public void test() {
+    public Map<String, Object> test() {
+        Map<String, Object> result  = new HashMap<>();
+
         try {
             Map<String, Object> payload = new HashMap<>();
             payload.put("test", "aaaa");
             String token = JwtUtil.getToken(payload);
             System.out.println(token);
             System.out.println(JwtUtil.isTokenVarify(token));
+
+            result.put("token", token);
         } catch (CustomException e) {
             System.out.println(e.getErrorInfo());
         } catch (Exception e) {
             System.out.println("error");
         }
-    }
 
+        return result;
+    }
 }

@@ -12,12 +12,12 @@ public class RootController {
     private final static String ERROR_PAGE = "index";
 
     @GetMapping(INDEX_PATH)
-    public String index() {
+    public String indexPage() {
         return INDEX_PAGE;
     }
 
     @GetMapping(ERROR_PATH)
-    public String error() {
+    public String errorPage() {
         return ERROR_PAGE;
     }
 
