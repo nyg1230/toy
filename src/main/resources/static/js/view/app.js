@@ -6,4 +6,5 @@ window.onload = () => {
     const ajax	= new Ajax();
     const body	= document.querySelector("body");
 	console.log(Route);
+	console.log("");
 }
