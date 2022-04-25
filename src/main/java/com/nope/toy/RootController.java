@@ -1,7 +1,10 @@
 package com.nope.toy;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 @Controller
 public class RootController {
@@ -15,7 +18,8 @@ public class RootController {
     private final static String API_TEST_PAGE	= "apiTest";
 
     @GetMapping(INDEX_PATH)
-    public String indexPage() {
+    public String indexPage(@RequestHeader Map<String, Object> reqHeader) {
+		System.out.println(reqHeader);
         return INDEX_PAGE;
     }
 
