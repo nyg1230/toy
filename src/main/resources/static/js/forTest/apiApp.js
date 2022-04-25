@@ -27,7 +27,8 @@ const addListener	= (tmpl, p) => {
 		const type	= p.type ? p.type : "get";
 		const path	= `${apiBaseUrl}${p.path}`
 		ajax[type.toLowerCase()](path, p.body, p.header).then((res) => {
-			console.log(res);
+			console.log("body : ", p.body);
+			console.log("result : ", res);
 		});
 	});
 }
